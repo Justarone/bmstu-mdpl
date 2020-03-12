@@ -5,7 +5,7 @@ SSTK SEGMENT para STACK 'STACK'
 	db 100 dup(0)
 SSTK ENDS
 
-SD1 SEGMENT para public 'DATA' ; сегмент с данными в 1 байт и меткой Х
+SD1 SEGMENT para public 'DATA' 
 	X db 'X'
 SD1 ENDS
 
