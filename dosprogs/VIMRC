@@ -1,0 +1,13 @@
+set number
+set expandtab
+set encoding=UTF-8
+set tabstop=4
+set shiftwidth=4
+set autoindent
+
+set is
+set hls
+set list
+set listchars=tab:>-
+set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+
