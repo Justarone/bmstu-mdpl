@@ -8,7 +8,6 @@ EXTRN print_n    : NEAR
 
 
 DataSeg SEGMENT PARA PUBLIC 'Data'
-                DB 20 DUP('$')
     MAIN_NUMBER DW 0
     REV_FLAG    DB 0
     INVITE_NUM  DB "Enter number (16 signed): $"
