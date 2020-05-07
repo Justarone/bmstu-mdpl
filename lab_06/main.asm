@@ -1,6 +1,6 @@
 .model tiny
 
-CODE SEGMENT
+MAIN_SEG SEGMENT
     ORG 100h
 
 main:
@@ -27,8 +27,6 @@ my_9h PROC
     PUSH DS
     PUSHF
 
-    PUSH CS
-    POP DS
 
     CALL CS:old_9h
 
@@ -42,36 +40,39 @@ my_9h PROC
     MOV AX, [DI]
     MOV CS:SYMB, AL
 
+    PUSH CS
+    POP DS
+
     MOV AX, 0b800h
     MOV ES, AX
-    MOV DI, CS:REGION_START
+    MOV DI, DS:REGION_START
 
     XOR CX, CX
-    MOV CL, CS:LINE_SIZE
+    MOV CL, DS:LINE_SIZE
 
     XOR AX, AX
-    MOV AL, CS:CUR_IND
+    MOV AL, DS:CUR_IND
     MOV BX, AX
     INC AL
     MOV CS:CUR_IND, AL
-    CMP AL, CS:TEXT_SIZE
+    CMP AL, DS:TEXT_SIZE
     JNE print_line
-    MOV CS:CUR_IND, 0
+    MOV DS:CUR_IND, 0
 
     print_line:
-        MOV AL, CS:TEXT[BX]
-        MOV AH, CS:OUTPUT_PROP
+        MOV AL, DS:TEXT[BX]
+        MOV AH, DS:OUTPUT_PROP
         STOSW
         INC BL
-        CMP BL, CS:TEXT_SIZE
+        CMP BL, DS:TEXT_SIZE
         JNE not_upper_bound
         MOV BL, 0
         not_upper_bound:
         LOOP print_line
 
-    ADD DI, CS:SPACE
-    MOV AL, CS:SYMB
-    MOV AH, CS:SYMB_PROP
+    ADD DI, DS:SPACE
+    MOV AL, DS:SYMB
+    MOV AH, DS:SYMB_PROP
     STOSW
 
     end_label:
@@ -135,5 +136,5 @@ uninstall:
     inst_msg   DB 'Advertisment installed!$'
     uninst_msg DB 'advertisment deleted!$'
 
-CODE ENDS
+MAIN_SEG ENDS
 END main
