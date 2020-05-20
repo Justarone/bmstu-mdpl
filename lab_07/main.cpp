@@ -51,13 +51,17 @@ int main()
     cout << "Src: " << src << "\nDest: " << dest << endl;
 
     char special_check[] = "abcdefghijklmnopqrstuvwxyz";
+
     cout << "Test2: Destination = Source + 4, copysize: 8\n";
-    cout << special_check << " -----> " << endl;
+    cout << "Start: " << special_check << endl;
+    cout << "Right: " << "abcdabcdefghmnopqrstuvwxyz\n";
     strcopy(special_check + 4, special_check, 8);
-    cout << special_check << endl;
+    cout << "Mine:  " << special_check << endl;
+
     cout << "Test3: Source = Destination + 4, copysize: 8\n";
-    cout << special_check << " -----> " << endl;
+    cout << "Start: " << special_check << endl;
+    cout << "Right: " << "abcdefghefghmnopqrstuvwxyz\n";
     strcopy(special_check, special_check + 4, 8);
-    cout << special_check << endl;
+    cout << "Mine:  " << special_check << endl;
     return 0;
 }

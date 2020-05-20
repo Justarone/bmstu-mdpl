@@ -22,6 +22,8 @@ not_equal:
 complicated_copy:
     add rdi, rcx
     add rsi, rcx
+    dec rsi
+    dec rdi
     copying:
         movsb
         sub rsi, 2
