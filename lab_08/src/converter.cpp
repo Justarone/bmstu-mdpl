@@ -6,7 +6,7 @@
 #define COEFF_G 0.7152
 #define COEFF_B 0.0722
 
-#define DEFAULT_SOURCE_FILE "meta/donat.png"
+#define DEFAULT_SOURCE_FILE "meta/donut.png"
 
 //#define COEFF_R 0.299
 //#define COEFF_G 0.587
