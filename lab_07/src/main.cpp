@@ -5,7 +5,7 @@
 using namespace std;
 
 extern "C" {
-    void strcopy(char *dest, char *src, size_t size);
+    void strcopy(char *dest, const char *src, size_t size);
 } 
 
 #define MAX_BUFFER_LEN 100
@@ -42,7 +42,7 @@ int main()
     int cnt;
     scanf("%s", buffer);
 
-    cout << "Library strlen:" << strlen(buffer) << "\nMy asm strlen: " << my_strlen(buffer) << endl;
+    cout << "Library strlen: " << strlen(buffer) << "\nMy asm strlen: " << my_strlen(buffer) << endl;
 
     char src[] = "String, to copy from...";
     char dest[MAX_BUFFER_LEN] = "Here is just cringe...";
@@ -54,13 +54,11 @@ int main()
 
     cout << "Test2: Destination = Source + 4, copysize: 8\n";
     cout << "Start: " << special_check << endl;
-    cout << "Right: " << "abcdabcdefghmnopqrstuvwxyz\n";
     strcopy(special_check + 4, special_check, 8);
     cout << "Mine:  " << special_check << endl;
 
     cout << "Test3: Source = Destination + 4, copysize: 8\n";
     cout << "Start: " << special_check << endl;
-    cout << "Right: " << "abcdefghefghmnopqrstuvwxyz\n";
     strcopy(special_check, special_check + 4, 8);
     cout << "Mine:  " << special_check << endl;
     return 0;

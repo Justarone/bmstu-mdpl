@@ -24,12 +24,9 @@ complicated_copy:
     add rsi, rcx
     dec rsi
     dec rdi
-    copying:
-        movsb
-        sub rsi, 2
-        sub rdi, 2
-        loop copying
-    
+    std
+
 simple_copy:
     rep movsb
+    cld
     ret
