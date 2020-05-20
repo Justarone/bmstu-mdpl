@@ -1,0 +1,9 @@
+-Iinclude
+
+`pkg-config gtkmm-3.0 --libs --cflags`
+`pkg-config cairomm-1.0 --libs --cflags`
+
+-std=c++17
+
+-Wall
+-Werror
