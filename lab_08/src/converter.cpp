@@ -17,7 +17,7 @@ using namespace std;
 double get_value(unsigned char *pixel) {
     double value;
     double blue = pixel[0], green = pixel[1], red[2];
-    double cr = 0.2126, cg = 0.7152, cb = 0.0722;
+    double cr = COEFF_R, cg = COEFF_G, cb = COEFF_B;
     __asm__(
             "fldl %3\n\t"
             "fmull %4\n\t"
