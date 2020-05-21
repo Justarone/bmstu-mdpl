@@ -7,7 +7,7 @@ strcopy:
 
     cmp rdi, rsi
     jne not_equal
-    ret
+    jmp quit
 
 not_equal:
     cmp rdi, rsi
@@ -29,4 +29,5 @@ complicated_copy:
 simple_copy:
     rep movsb
     cld
+quit:
     ret
