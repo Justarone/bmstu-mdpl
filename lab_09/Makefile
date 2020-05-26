@@ -9,11 +9,11 @@ apps: $(OUT_FILES)
 asm: $(ASM_FILES)
 
 disassembler/%.asm: out/%.out
-	mkdir -f disassembler
+	mkdir -p disassembler
 	objdump -d -Mintel $< >$@
 
 out/%.out: src/%.c
-	mkdir -f out
+	mkdir -p out
 	gcc -o $@ $^
 
 clean:
