@@ -1,0 +1,8 @@
+GDB:
+disassemble <function_name> - показать код функции на ассемблере 
+display/i $pc - показывать строки на ассемблере
+ni, si == nexti, stepi - шаг на ассемблере
+i r == info register - показывает регистры
+whe(re) - показать стек (функции) == bt == backtrace
+info frame (i f) = показать информацию о стеке и тп
+x/<count><format><size>   <addr>  = показать <count> участков памяти размером <size> в формате <format> начиная с <addr>
