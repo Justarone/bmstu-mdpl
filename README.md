@@ -1,2 +1,3 @@
-# MDPL_BMSTU4
-Machine dependent programming languages labs
+# МГТУ, 4 семестр, Машинно-зависимые ЯП
+
+В этом году программа отличалась от прошлого
